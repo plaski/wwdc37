@@ -1,0 +1,85 @@
+.button {
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: 'Open Sans', sans-serif;
+  border: 0;
+  text-transform: uppercase;
+  border-radius: 2.1875em;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+  color: #ffffff;
+  background-color: $primary-background;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  overflow: hidden;
+
+  &__span {
+    padding: 1em 2em;
+    position: relative;
+    display: inline-block;
+  }
+
+  &:hover {
+    background-color: #97161F;
+
+    & .button__span {
+      transform: translateY(-100%);
+      transition: transform 300ms;
+
+      &::before {
+        content: attr(data-text);
+        position: absolute;
+        color: #ffffff;
+        width: 100%;
+        height: 100%;
+        top: 100%;
+        left: 0;
+        padding: 1em 0;
+        box-sizing: border-box;
+      }
+    }
+  }
+
+  &--hero {
+    background-color: #ffffff;
+    color: $third-text;
+    -webkit-text-fill-color: $third-text;
+
+    &:hover {
+      background-color: #CECECE;
+    }
+  }
+}
+
+.triangle {
+  width: 0;
+  position: absolute;
+  height: 0;
+  top: 0;
+  left: 0;
+
+  @media screen and (max-width: 900px) {
+    display: none;
+  }
+}
+
+.link {
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    height: 2px;
+    transform: scale(0);
+    transform-origin: left;
+    transition: transform 350ms;
+    transition-delay: 120ms;
+  }
+
+  &:hover::after {
+    transform: scale(1);
+    transition-delay: 0ms;
+  }
+}

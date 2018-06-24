@@ -1,0 +1,243 @@
+.team {
+  background-color: $secondary-background;
+  padding: 110px 0;
+  position: relative;
+
+  @media screen and (max-width: 900px) {
+    padding: 80px 20px;
+  }
+
+  @media screen and (max-width: 400px) {
+    padding: 40px 20px;
+  }
+
+  &__title {
+    text-align: center;
+    margin-bottom: 120px;
+
+    @media screen and (max-width: 800px) {
+      margin-bottom: 60px;
+    }
+  }
+
+
+  &__triangle {
+    --length: 220px;
+    border-top: var(--length) solid transparent;
+    border-bottom: var(--length) solid transparent;
+    border-left: var(--length) solid #000000;
+    top: -220px;
+  }
+
+  &__content-wrap {
+    position: relative;
+    min-height: 340px;
+
+    @media screen and (max-width: 400px) {
+      min-height: 200px;
+    }
+  }
+}
+
+.carousel {
+  margin: 0 65px;
+  list-style: none;
+  width: 100%;
+
+  &__button {
+    z-index: 2;
+    --length: 30px;
+    --color: #424240;
+    position: absolute;
+    top: 43%;
+    height: 0;
+    width: 0;
+    margin: 0 30px;
+    transform: translateY(-50%);
+    background-color: transparent;
+    cursor: pointer;
+
+    @media screen and (max-width: 800px) {
+      --length: 25px;
+    }
+
+    @media screen and (max-width: 600px) {
+      --length: 15px;
+      margin: 0 10px;
+    }
+
+    @media screen and (max-width: 400px) {
+      top: 39%;
+    }
+
+    &--prev {
+      left: 0;
+      border-left: 0;
+      border-top: var(--length) solid transparent;
+      border-bottom: var(--length) solid transparent;
+      border-right: var(--length) solid var(--color);
+    }
+
+    &--next {
+      right: 0;
+      border-right: 0;
+      border-top: var(--length) solid transparent;
+      border-bottom: var(--length) solid transparent;
+      border-left: var(--length) solid var(--color);
+    }
+  }
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Open Sans', sans-serif;
+  transition: transform 500ms, opacity 500ms;
+
+  &__image {
+    --size: 25vw;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.22);
+    transform: rotate(45deg);
+    width: var(--size);
+    max-width: 320px;
+    max-height: 320px;
+    height: var(--size);
+    z-index: 0;
+    position: relative;
+    overflow: hidden;
+    border: 18px solid #ffffff;
+
+    @media screen and (max-width: 900px) {
+      --size: 35vw;
+      border-width: 10px;
+    }
+
+    @media screen and (max-width: 600px) {
+      --size: 40vw;
+      border-width: 5px;
+    }
+
+    &::before {
+      position: absolute;
+      top: -25%;
+      left: -25%;
+      content: '';
+      height: 150%;
+      width: 150%;
+      transform: rotate(-45deg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+  }
+
+  &__name {
+    position: relative;
+    top: -12px;
+    transform: skewX(45deg);
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #ffffff;
+    background-color: #000000;
+    padding: 4px 30px 6px;
+
+    @media screen and (max-width: 900px) {
+      font-size: 1rem;
+      padding: 3px 20px 4px;
+      top: 0;
+    }
+
+    @media screen and (max-width: 600px) {
+      font-size: 0.8rem;
+    }
+
+    & > p {
+      transform: skewX(-45deg);
+    }
+  }
+
+  &__job {
+    position: relative;
+    top: -16px;
+    left: 20px;
+    transform: skewX(45deg);
+    text-align: center;
+    color: #ffffff;
+    background-color: $primary-background;
+    font-size: 1.15rem;
+    font-style: italic;
+    padding: 2px 20px 4px;
+
+    @media screen and (max-width: 900px) {
+      font-size: 0.85rem;
+      padding: 2px 15px 3px;
+      top: -2px;
+      left: 10px;
+    }
+
+    @media screen and (max-width: 600px) {
+      font-size: 0.7rem;
+    }
+
+    & > p {
+      transform: skewX(-45deg);
+    }
+  }
+
+  &--center {
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &--one > .item__image::before {
+    background-image: url('../img/team1.png');
+  }
+
+  &--two > .item__image::before {
+    background-image: url('../img/team2.png');
+  }
+
+  &--three > .item__image::before {
+    background-image: url('../img/team3.png');
+  }
+}
+
+.item--left, .item--right {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  opacity: 0.5;
+
+
+  & .item {
+
+    &__job {
+      opacity: 0;
+      transform: scale(0);
+      transform-origin: center;
+    }
+  }
+}
+
+.item--left {
+  transform: translate(-150%, -50%) scale(0.7);
+
+  @media screen and (max-width: 900px) {
+    transform: translate(-250%, -50%) scale(0.7);
+    opacity: 0;
+  }
+}
+
+.item--right {
+  transform: translate(50%, -50%) scale(0.7);
+
+  @media screen and (max-width: 900px) {
+    transform: translate(150%, -50%) scale(0.7);
+    opacity: 0;
+  }
+}

@@ -1,0 +1,178 @@
+// SCSS variables are information about icon's compiled state, stored under its original file name
+//
+// .icon-home {
+//   width: $icon-home-width;
+// }
+//
+// The large array-like variables contain all information about a single icon
+// $icon-home: x y offset_x offset_y width height total_width total_height image_path;
+//
+// At the bottom of this section, we provide information about the spritesheet itself
+// $spritesheet: width height image $spritesheet-sprites;
+$address-name: 'address';
+$address-x: 0px;
+$address-y: 0px;
+$address-offset-x: 0px;
+$address-offset-y: 0px;
+$address-width: 52px;
+$address-height: 54px;
+$address-total-width: 289px;
+$address-total-height: 204px;
+$address-image: '../img/sprite.png';
+$address: (0px, 0px, 0px, 0px, 52px, 54px, 289px, 204px, '../img/sprite.png', 'address', );
+$chart-name: 'chart';
+$chart-x: 148px;
+$chart-y: 94px;
+$chart-offset-x: -148px;
+$chart-offset-y: -94px;
+$chart-width: 32px;
+$chart-height: 32px;
+$chart-total-width: 289px;
+$chart-total-height: 204px;
+$chart-image: '../img/sprite.png';
+$chart: (148px, 94px, -148px, -94px, 32px, 32px, 289px, 204px, '../img/sprite.png', 'chart', );
+$email-name: 'email';
+$email-x: 92px;
+$email-y: 0px;
+$email-offset-x: -92px;
+$email-offset-y: 0px;
+$email-width: 54px;
+$email-height: 42px;
+$email-total-width: 289px;
+$email-total-height: 204px;
+$email-image: '../img/sprite.png';
+$email: (92px, 0px, -92px, 0px, 54px, 42px, 289px, 204px, '../img/sprite.png', 'email', );
+$envelope-name: 'envelope';
+$envelope-x: 72px;
+$envelope-y: 172px;
+$envelope-offset-x: -72px;
+$envelope-offset-y: -172px;
+$envelope-width: 36px;
+$envelope-height: 28px;
+$envelope-total-width: 289px;
+$envelope-total-height: 204px;
+$envelope-image: '../img/sprite.png';
+$envelope: (72px, 172px, -72px, -172px, 36px, 28px, 289px, 204px, '../img/sprite.png', 'envelope', );
+$flag-name: 'flag';
+$flag-x: 262px;
+$flag-y: 0px;
+$flag-offset-x: -262px;
+$flag-offset-y: 0px;
+$flag-width: 27px;
+$flag-height: 32px;
+$flag-total-width: 289px;
+$flag-total-height: 204px;
+$flag-image: '../img/sprite.png';
+$flag: (262px, 0px, -262px, 0px, 27px, 32px, 289px, 204px, '../img/sprite.png', 'flag', );
+$map-name: 'map';
+$map-x: 74px;
+$map-y: 94px;
+$map-offset-x: -74px;
+$map-offset-y: -94px;
+$map-width: 34px;
+$map-height: 36px;
+$map-total-width: 289px;
+$map-total-height: 204px;
+$map-image: '../img/sprite.png';
+$map: (74px, 94px, -74px, -94px, 34px, 36px, 289px, 204px, '../img/sprite.png', 'map', );
+$monitor-name: 'monitor';
+$monitor-x: 0px;
+$monitor-y: 172px;
+$monitor-offset-x: 0px;
+$monitor-offset-y: -172px;
+$monitor-width: 32px;
+$monitor-height: 32px;
+$monitor-total-width: 289px;
+$monitor-total-height: 204px;
+$monitor-image: '../img/sprite.png';
+$monitor: (0px, 172px, 0px, -172px, 32px, 32px, 289px, 204px, '../img/sprite.png', 'monitor', );
+$person-name: 'person';
+$person-x: 0px;
+$person-y: 94px;
+$person-offset-x: 0px;
+$person-offset-y: -94px;
+$person-width: 34px;
+$person-height: 38px;
+$person-total-width: 289px;
+$person-total-height: 204px;
+$person-image: '../img/sprite.png';
+$person: (0px, 94px, 0px, -94px, 34px, 38px, 289px, 204px, '../img/sprite.png', 'person', );
+$phone-name: 'phone';
+$phone-x: 186px;
+$phone-y: 0px;
+$phone-offset-x: -186px;
+$phone-offset-y: 0px;
+$phone-width: 36px;
+$phone-height: 54px;
+$phone-total-width: 289px;
+$phone-total-height: 204px;
+$phone-image: '../img/sprite.png';
+$phone: (186px, 0px, -186px, 0px, 36px, 54px, 289px, 204px, '../img/sprite.png', 'phone', );
+$spritesheet-width: 289px;
+$spritesheet-height: 204px;
+$spritesheet-image: '../img/sprite.png';
+$spritesheet-sprites: ($address, $chart, $email, $envelope, $flag, $map, $monitor, $person, $phone, );
+$spritesheet: (289px, 204px, '../img/sprite.png', $spritesheet-sprites, );
+
+// The provided mixins are intended to be used with the array-like variables
+//
+// .icon-home {
+//   @include sprite-width($icon-home);
+// }
+//
+// .icon-email {
+//   @include sprite($icon-email);
+// }
+//
+// Example usage in HTML:
+//
+// `display: block` sprite:
+// <div class="icon-home"></div>
+//
+// To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+//
+// // CSS
+// .icon {
+//   display: inline-block;
+// }
+//
+// // HTML
+// <i class="icon icon-home"></i>
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+// The `sprites` mixin generates identical output to the CSS template
+//   but can be overridden inside of SCSS
+//
+// @include sprites($spritesheet-sprites);
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}
