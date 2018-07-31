@@ -1,9 +1,19 @@
-# WEEKLY WEBDEV CHALLENGE 37
+# WEEKLY WEB DEV CHALLENGE 37
 
-***
+## General info
 
-## PSD from FB Weekly WebDev Challenge group
+One page site. PSD from FB Weekly WebDev Challenge group.
 
-### Live: [WWDC37 - live](https://plaski.github.io/wwdc37/dist)
+## Technologies
 
-### Code: [WWDC37 - live](https://github.com/plaski/wwdc37)
+- HTML
+- CSS/SCSS
+- JavaScript
+- Sprites
+- Webpack
+
+## Code/Live
+
+- [Live](https://plaski.github.io/wwdc37/dist)
+
+- [Code](https://github.com/plaski/wwdc37)
