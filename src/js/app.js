@@ -126,7 +126,6 @@ const changeTeam = function() {
   }
 
   function changeNext() {
-    console.log('change next');
     const items = document.querySelectorAll('.item');
     items[0].classList.add('item--right');
     items[1].classList.add('item--left');
