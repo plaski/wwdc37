@@ -12,6 +12,9 @@ const navOnScroll = function() {
     let sections = document.querySelectorAll('section');
     const footer = document.querySelector('footer');
     sections = [...sections, footer];
+    const nav = document.querySelector('nav');
+    const links = nav.querySelectorAll('a.link');
+    const linksAll = [...links];
     sections.forEach(function(section) {
       const sectionRect = section.getBoundingClientRect();
       if ((scrollPosition + 50) >= sectionRect.top + scrollPosition && scrollPosition <= sectionRect.bottom + scrollPosition) {
@@ -29,6 +32,12 @@ const navOnScroll = function() {
         });
       };
     });
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+      linksAll.forEach(function(link) {
+        link.classList.remove('nav__link--active');
+      });
+      linksAll[linksAll.length - 1].classList.add('nav__link--active');
+    };
   });
 }
 
